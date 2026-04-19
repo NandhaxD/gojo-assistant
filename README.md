@@ -131,13 +131,6 @@ python app.py
 
 This project can be deployed on multiple platforms.
 
-### ☁️ Render
-
-1. Create a **New Web Service**
-2. Connect your GitHub repository
-3. Add environment variables
-4. Deploy
-
 ### 🖥 VPS
 
 Run using:
@@ -148,7 +141,6 @@ python app.py
 
 ### Supported Platforms
 
-* Render
 * Railway
 * Heroku
 * VPS (Ubuntu / Debian)
