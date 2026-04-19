@@ -88,8 +88,6 @@ LEFT_STRING = [
    "<b>{username}</b> has left us, their presence only a fleeting memory in <b>{chatname}</b>..."
 ]
 
-WEL_MEDIA = "CgACAgQAAxkBAAIeamai_lMEbF9AyX0y0s_oPGf2beHVAAIVBgACXD4dUYj11srnn-RkNQQ"
-LEFT_MEDIA = "CgACAgQAAxkBAAIedWajAuHC1jbhxEkCbm4dCh0jiel3AAI-BgACD0YdUTdhQRMmGhEaNQQ"
 
 def extract_status_change(chat_member_update: ChatMemberUpdated) -> Optional[Tuple[bool, bool]]:
     """Takes a ChatMemberUpdated instance and extracts whether the 'old_chat_member' was a member
@@ -240,9 +238,8 @@ async def WelcomeMembers(update, context):
              welcome = await get_welcome(chat.id)
              if not welcome:
                 welcome_str = random.choice(WEL_STRING)
-                msg = await chat.send_animation(
-                       animation=WEL_MEDIA,
-                       caption=welcome_str.format(username=member_name, chatname=chat.title),
+                msg = await chat.send_message(
+                       welcome_str.format(username=member_name, chatname=chat.title),
                        parse_mode=constants.ParseMode.HTML
                 )
                 await auto_delete(msg, 5*60)
@@ -278,9 +275,8 @@ async def WelcomeMembers(update, context):
              if not goodbye:
                  return #skip
                  left_str = random.choice(LEFT_STRING)
-                 msg = await chat.send_animation(
-                      animation=LEFT_MEDIA,
-                      caption=left_str.format(
+                 msg = await chat.send_message(
+                      left_str.format(
                       username=member_name,
                       chatname=chat.title
                  ),
