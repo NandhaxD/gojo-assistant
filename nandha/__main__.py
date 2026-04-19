@@ -5,11 +5,9 @@ import logging
 import importlib.util
 import asyncio
 
-from aiohttp import web
 from telegram import Update
-from app import keep_alive, web_server
 from telegram.ext import Application
-from nandha import TOKEN, app, plugins, SUPPORT_CHAT, LOGS_CHANNEL, IS_WEB_SUP, initialize_database, start_pyro_clients, BIND_ADDRESS, PORT
+from nandha import app, plugins, SUPPORT_CHAT, LOGS_CHANNEL, initialize_database, start_pyro_clients
 
 # Initialize logging
 logging.basicConfig(level=logging.DEBUG)
@@ -36,21 +34,6 @@ def import_plugins(package):
         imported_modules.append(full_name)
 
     logging.info(f"Successfully imported {len(imported_modules)} modules: [{', '.join(module.rsplit('.', 1)[-1] for module in imported_modules)}]")
-
-
-
-
-async def start_services():
-        
-        server = web.AppRunner(web_server())
-        await server.setup()
-        await web.TCPSite(server, BIND_ADDRESS, PORT).start()
-        logging.info("Web Server Initialized Successfully")
-        logging.info("=========== Service Startup Complete ===========")
-  
-        asyncio.create_task(keep_alive())
-        logging.info("Keep Alive Service Started")
-        logging.info("=========== Initializing Web Server ===========")
    
 
 
@@ -64,8 +47,6 @@ if __name__ == '__main__':
         start_pyro_clients(), 
         initialize_database()
     ]
-    if IS_WEB_SUP:
-        async_funcs.append(start_services())
         
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.gather(*async_funcs))
@@ -73,6 +54,3 @@ if __name__ == '__main__':
     
         
   
-
-
-
