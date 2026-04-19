@@ -60,12 +60,6 @@ It combines **efficient Telegram API usage, database-backed storage, and scalabl
 * Pagination support
 * Clean result display
 
-### 🌐 Web Server Support
-
-* Built with **aiohttp**
-* Uptime monitoring endpoint
-* Compatible with **Render / Heroku / VPS**
-
 ### 💾 Database Integration
 
 * MongoDB storage
