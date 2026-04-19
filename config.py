@@ -9,11 +9,11 @@ multi_clients, work_loads = {}, {}
 
 # necessary
 PREFIX = True
-TOKEN: str = os.getenv('TOKEN', '6913439784:AAFwzP6uBQrjW9fkFb1FaADqnQbDm0')
-DB_URL: str = os.getenv('DB_URL', 'mongodb+srv://nandhaxd:hIahsjjPX3@cluster0.80igexg.mongodb.net')
-DB_URL2: str = os.getenv('DB_URL2', 'mongodb+srv://nandhasigma:vnfVompdkskskkssE3AK@cluster0.gt47zau.mongodb.net')
+TOKEN = os.getenv('TOKEN', '')
+DB_URL = os.getenv('DB_URL', '')
+DB_URL2 = os.getenv('DB_URL2', '')
 BOT_ID: int = int(TOKEN.split(':')[0])
-API_ID: int = 18257951
+API_ID = os.getenv('API_ID', '')
 
 API_HASH: str = "d8ea642aedb7bc05f0cfd477"
 SUPPORT_CHAT = '@GojoAssistantChat'
@@ -41,13 +41,6 @@ USER_STRING = "BQHCct8AOtz22BEAvc5FGHs7h-wblZmtZRHTVIiZHjFUJXoAde1QlomW8k848q2OA
 GIST_TOKEN = "github_pat_11AVKME9WCXomC73WuVYtOnQdOxG08cfzcfDQ5NZEF2M3HHJYFmNI"
 
 
-# keep alive ( web support )
-WEB_URL = "https://makima-lover.onrender.com/"
-KEEP_ALIVE = True
-PORT = int(os.environ.get("PORT", 8080))
-BIND_ADDRESS = str(os.environ.get("WEB_SERVER_BIND_ADDRESS", "0.0.0.0"))
-WEB_SLEEP = 4*60
-
 # pagination & stuffs
 AUTO_DEL = 10
 BTN_COLUMNS = 4
@@ -55,11 +48,11 @@ BTN_ROWS = 7
 
 
 # some media source
-PM_START_IMG = "AgACAgQAAxkDAAECcMhndPIEtfNJJFeNC6HtpnPrBdMBsgACO7QxG2M4RFCks6CwauexWAEAAwIAA3kAAzYE"
-HELP_CMD_IMG = "AgACAgQAAxkDAAECcQpndPLyZj0IsU6ZdSnsZj-phMLGIAACvLQxG_DZRFDyiIVZuXpsHQEAAwIAA3kAAzYE"
-HELP_MODULE_IMG = "AgACAgQAAxkDAAECcRZndPaa-qXg8b3KyCaxo28sFgAB17wAAuu0MRuFFIRRk8_kSHQ2jqUBAAMCAAN5AAM2BA"
-START_IMG = "AgACAgUAAx0CdvJ-DQACQENnFJeDdSaiI6usIlegL_25krbWqQACBcExG1tvqFRGAAHGxB5g88ABAAMCAAN4AAM2BA"
-FORCE_JOIN_IMG = "AgACAgUAAxkBAAECo71nejtOVOcAAbVnqDfRWtREw8Rj2vkAAljBMRsfkdlXHka_9cfD7EEBAAMCAAN5AAM2BA"
+PM_START_IMG = "https://i.postimg.cc/MZb9vWrz/a9b77e26-7b41-43a2-b65d-af88c8090181.jpg"
+HELP_CMD_IMG = "https://i.postimg.cc/T1CjQ3Z4/2b6b27bb-ab4c-43a1-bf33-a2ff137d6557.jpg"
+HELP_MODULE_IMG = "https://i.postimg.cc/qR6W99kz/346555f0-e400-4639-b88b-f39f3ca4015c.jpg"
+START_IMG = "https://i.postimg.cc/RZnfJdVK/6c7c6ba5-b588-4793-b693-203250a87346.jpg"
+FORCE_JOIN_IMG = "https://i.postimg.cc/TY0NHRrs/84b9712f-74ea-44c2-9ac9-2dc20f954b72.jpg"
 
 AF_START_STICKERS = [
   "CAACAgUAAxkBAAEBrV9nWukpft8gmtrZVMkbO4GKlZy0HQACWxUAAnHv2FZkjr7WjG3OjzYE",
